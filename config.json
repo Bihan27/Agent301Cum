@@ -1,0 +1,10 @@
+{
+    "claim_tasks": true,
+    "claim_tickets": true,
+    "use_free_tickets": true,
+    "min_spin_delay": 5,
+    "max_spin_delay": 15,
+    "account_delay": 3,
+    "countdown_loop": 28800
+
+}
