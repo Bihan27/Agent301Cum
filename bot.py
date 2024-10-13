@@ -242,7 +242,7 @@ def complete_tasks(authorization, username, account_number):
                 countdown_timer(1)
 
     if use_free_tickets:
-        if tickets > 0:
+        if tickets and tickets > 0:
             log(yel + f"You have {wht}{tickets} tickets")
             load_whell, notcoin, toncoin = load(headers)
             countdown_timer(1)
