@@ -147,7 +147,10 @@ def load(headers):
             notcoin = result.get("notcoin", 0)
             toncoin = result.get("toncoin", 0)
             return tasks, notcoin, toncoin
-
+        else:
+            return None, None, None
+    else:
+        return None, None, None
 
 def claim_ticket(task, headers):
     url = 'https://api.agent301.org/wheel/task'
