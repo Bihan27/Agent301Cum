@@ -269,7 +269,7 @@ def complete_tasks(authorization, username, account_number):
         log(red +f'FAILED return balance')
 
 
-async def claim_task(headers, task_type, title):
+def claim_task(headers, task_type, title):
     url = 'https://api.agent301.org/completeTask'
     claim_data = {"type": task_type}
     response = requests.post(url, headers=headers, json=claim_data)
