@@ -1,5 +1,6 @@
 {
     "claim_tasks": true,
+    "complete_video_task": true,
     "claim_tickets": true,
     "use_free_tickets": true,
     "min_spin_delay": 5,

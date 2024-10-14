@@ -43,6 +43,7 @@ except FileNotFoundError:
 
 claim_tasks = config.get("claim_tasks", False)
 claim_tickets = config.get("claim_tickets", False)
+complete_video_task = config.get("complete_video_task", False)
 use_free_tickets = config.get("use_free_tickets", False)
 min_spin_delay = int(config.get("min_spin_delay", 5))
 max_spin_delay = int(config.get("max_spin_delay", 20))
@@ -211,7 +212,7 @@ def complete_tasks(authorization, username, account_number):
                     countdown_timer(1)
                     claim_task(headers, task_type, title)
 
-                elif task_type == "video" and count < max_count:
+                elif complete_video_task and task_type == "video" and count < max_count:
                     while count < max_count:
                         log(f"{yel}TASK {wht}{task_type} - {title} {yel}PROGRESS: {wht}{count}/{max_count}")
                         countdown_timer(1)
@@ -270,6 +271,7 @@ def complete_tasks(authorization, username, account_number):
         return balance, notcoin, toncoin/100    # Ensure balance is returned after all tasks are processed
     except:
         log(red +f'FAILED return balance')
+        return None, None, None
 
 
 def claim_task(headers, task_type, title):
