@@ -260,7 +260,7 @@ def complete_tasks(authorization, username, account_number):
                         random_spin_delay = random.randint(min_spin_delay, max_spin_delay)
                         countdown_timer(random_spin_delay)
                     else:
-                        countdown_timer(10)
+                        break
             else:
                 log(red + f'FAILED load wheel')
         else:
